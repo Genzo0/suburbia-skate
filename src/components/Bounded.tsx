@@ -1,8 +1,8 @@
-import { CSSProperties, ElementType, ReactNode } from "react";
+import { CSSProperties, HTMLElementType, ReactNode } from "react";
 import clsx from "clsx";
 
 interface BoundedProps {
-  as?: ElementType;
+  as?: HTMLElementType;
   className?: string;
   style?: CSSProperties;
   children?: ReactNode; // Made optional and changed from 'never'
