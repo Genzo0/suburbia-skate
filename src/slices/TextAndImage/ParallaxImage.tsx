@@ -7,13 +7,13 @@ import React, { useEffect, useRef } from "react";
 
 type Props = {
   foregroundImage: ImageField;
-  backgorundImage: ImageField;
+  backgroundImage: ImageField;
   className?: string;
 };
 
 export default function ParallaxImage({
   foregroundImage,
-  backgorundImage,
+  backgroundImage,
   className,
 }: Props) {
   const backgroundRef = useRef<HTMLDivElement>(null);
@@ -70,7 +70,7 @@ export default function ParallaxImage({
         ref={backgroundRef}
         className="col-start-1 row-start-1 transition-transform"
       >
-        <PrismicNextImage field={backgorundImage} alt="" className="w-11/12" />
+        <PrismicNextImage field={backgroundImage} alt="" className="w-11/12" />
       </div>
       <div
         ref={foregroundRef}

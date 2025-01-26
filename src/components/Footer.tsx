@@ -1,10 +1,11 @@
-import { createClient } from "@/prismicio";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import React from "react";
-import { Logo } from "./Logo";
+import { asImageSrc } from "@prismicio/client";
+
+import { createClient } from "@/prismicio";
+import { Logo } from "@/components/Logo";
 import { Bounded } from "./Bounded";
 import { FooterPhysics } from "./FooterPhysics";
-import { asImageSrc } from "@prismicio/client";
 
 export async function Footer() {
   const client = createClient();
@@ -28,18 +29,18 @@ export async function Footer() {
           boardTextureURLs={boardTextureURLs}
           className="absolute inset-0 overflow-hidden"
         />
-        <Logo className="pointer-events-none relative h-20 mix-blend-exclusion md:h-28"></Logo>
+        <Logo className="pointer-events-none relative h-20 mix-blend-exclusion md:h-28" />
       </div>
       <Bounded as="nav">
         <ul className="flex flex-wrap justify-center gap-8 ~text-lg/xl">
           {settings.data.navigation.map((item) => (
             <li key={item.link.text} className="hover:underline">
-              <PrismicNextLink field={item.link}></PrismicNextLink>
+              <PrismicNextLink field={item.link} />
             </li>
           ))}
         </ul>
       </Bounded>
-      {/* list of links */}
+      {/* List of links */}
     </footer>
   );
 }

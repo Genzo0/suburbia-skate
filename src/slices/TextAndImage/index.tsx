@@ -67,9 +67,10 @@ const TextAndImage = ({ slice, index }: TextAndImageProps): JSX.Element => {
             </ButtonLink>
           </SlideIn>
         </div>
+
         <ParallaxImage
           foregroundImage={slice.primary.foreground_image}
-          backgorundImage={slice.primary.background_image}
+          backgroundImage={slice.primary.background_image}
         />
       </div>
     </Bounded>

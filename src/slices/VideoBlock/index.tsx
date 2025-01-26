@@ -26,7 +26,7 @@ const VideoBlock = ({ slice }: VideoBlockProps): JSX.Element => {
     >
       <h2 className="sr-only">Video Reel</h2>
       <div className="relative aspect-video">
-        {/* mask */}
+        {/* Masks */}
         <div
           className={clsx(
             MASK_CLASSES,
@@ -42,24 +42,22 @@ const VideoBlock = ({ slice }: VideoBlockProps): JSX.Element => {
         <div
           className={clsx(
             MASK_CLASSES,
-            "bg-white-lime absolute inset-0 ~translate-x-1/2 ~-translate-y-1/3"
+            "bg-white absolute inset-0 ~translate-x-1/2 ~-translate-y-1/3"
           )}
         />
-        {/* video */}
+        {/* Video */}
         <div className={clsx(MASK_CLASSES, "relative h-full")}>
           {isFilled.keyText(slice.primary.youtube_video_id) ? (
             <LazyYouTubePlayer youTubeID={slice.primary.youtube_video_id} />
           ) : null}
+          {/* Texture overlay */}
+          <Image
+            src="/image-texture.png"
+            alt=""
+            fill
+            className="pointer-events-none object-cover opacity-50"
+          />
         </div>
-
-        {/* overlay */}
-
-        <Image
-          src="/bg-texture.webp"
-          alt=""
-          fill
-          className="pointer-events-none object-cover opacity-50"
-        />
       </div>
     </Bounded>
   );
